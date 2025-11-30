@@ -2,15 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  // NOTE: Update this URL after deploying your frontend to Cloudflare Pages
-  metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL("https://ai-influencer-frontend.pages.dev"),
   title: "AI Influencer | Create AI Content Like Never Before",
   description: "Generate images, content, and videos with persistent AI influencer personas. The future of content creation is here.",
   openGraph: {
     title: "AI Influencer | Create AI Content Like Never Before",
     description: "Generate images, content, and videos with persistent AI influencer personas. The future of content creation is here.",
-    // NOTE: Update this URL after deploying your frontend
-    url: "http://localhost:3000",
+    url: "https://ai-influencer-frontend.pages.dev",
     siteName: "AI Influencer",
     images: [
       {

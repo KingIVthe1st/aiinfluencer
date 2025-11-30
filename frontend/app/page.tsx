@@ -40,13 +40,13 @@ export default function Home() {
                 {/* Icon container */}
                 <div className="relative w-11 h-11 bg-gradient-to-br from-violet-600 via-fuchsia-600 to-violet-600 rounded-2xl flex items-center justify-center shadow-xl shadow-violet-500/40 group-hover:shadow-violet-500/60 transition-all duration-500 group-hover:scale-105">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
                 </div>
               </div>
 
               <span className="text-2xl font-bold bg-gradient-to-r from-violet-700 via-fuchsia-600 to-violet-700 bg-clip-text text-transparent tracking-tight">
-                dai+bed
+                AI Influencer
               </span>
             </div>
 
@@ -92,14 +92,14 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-xl rounded-full border border-violet-200/50 shadow-sm shadow-violet-500/10 mb-8 group hover:shadow-md hover:shadow-violet-500/20 transition-all duration-500">
               <div className="w-2 h-2 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-full animate-pulse" />
               <span className="text-sm font-semibold bg-gradient-to-r from-violet-700 to-fuchsia-600 bg-clip-text text-transparent">
-                Built with next-generation AI designed for music, visuals, and storytelling
+                Built with next-generation AI designed for influencers, creators, and brands
               </span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1] tracking-tight">
               <span className="inline-block bg-gradient-to-r from-slate-900 via-violet-900 to-slate-900 bg-clip-text text-transparent animate-gradient">
-                Create AI Music
+                Create AI Influencers
               </span>
               <br />
               <span className="inline-block mt-2 bg-gradient-to-r from-violet-600 via-fuchsia-600 to-pink-600 bg-clip-text text-transparent">
@@ -109,7 +109,7 @@ export default function Home() {
 
             {/* Subheadline */}
             <p className="text-xl sm:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-12">
-              Generate images, songs, and videos with consistent AI singer personas.
+              Generate images, voiceovers, and videos with consistent AI influencer personas.
               <span className="text-violet-600 font-semibold"> The future of content creation</span> is here.
             </p>
 
@@ -195,7 +195,7 @@ export default function Home() {
 
           {/* Bento Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Feature 1 - AI Singer Personas (Large Card) */}
+            {/* Feature 1 - AI Influencer Personas (Large Card) */}
             <div className="group lg:col-span-2 lg:row-span-2 relative bg-white/80 backdrop-blur-xl rounded-3xl border-2 border-slate-200/50 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-violet-500/20 transition-all duration-500 hover:scale-[1.02] hover:border-violet-300/50 overflow-hidden"
                  style={{
                    backgroundImage: 'url(/aisinger.png)',
@@ -213,25 +213,25 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
                   <div className="relative w-16 h-16 bg-gradient-to-br from-violet-600 to-fuchsia-600 rounded-2xl flex items-center justify-center shadow-lg shadow-violet-500/40">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                   </div>
                 </div>
 
                 {/* Content */}
                 <h3 className="text-3xl font-bold text-slate-900 mb-4">
-                  AI Singer Personas
+                  AI Influencer Personas
                 </h3>
 
                 <p className="text-lg text-slate-600 leading-relaxed mb-6 flex-grow">
-                  Create unique AI singers with custom voices and personalities that persist across all your content.
-                  Build a consistent brand with voices that your audience will recognize and love.
+                  Create unique AI influencers with custom voices and personalities that persist across all your content.
+                  Build a consistent brand with personas that your audience will recognize and love.
                 </p>
 
                 {/* Feature badges */}
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 text-xs font-semibold text-violet-700 bg-violet-100 rounded-full">
-                    Voice Cloning
+                    Custom Voice
                   </span>
                   <span className="px-3 py-1 text-xs font-semibold text-fuchsia-700 bg-fuchsia-100 rounded-full">
                     Personality
@@ -270,12 +270,12 @@ export default function Home() {
                 </h3>
 
                 <p className="text-base text-slate-600 leading-relaxed">
-                  Generate stunning visuals with Gemini AI, perfectly matched to your singer personas and content style.
+                  Generate stunning visuals with Gemini AI, perfectly matched to your influencer personas and content style.
                 </p>
               </div>
             </div>
 
-            {/* Feature 3 - Audio & Songs */}
+            {/* Feature 3 - Voice & Audio */}
             <div className="group relative bg-white/80 backdrop-blur-xl rounded-3xl border-2 border-slate-200/50 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-violet-500/20 transition-all duration-500 hover:scale-[1.02] hover:border-violet-300/50 overflow-hidden">
               {/* Background overlay removed - clean white card */}
               <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-fuchsia-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -285,17 +285,17 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
                   <div className="relative w-14 h-14 bg-gradient-to-br from-violet-600 to-fuchsia-600 rounded-2xl flex items-center justify-center shadow-lg shadow-violet-500/40">
                     <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                     </svg>
                   </div>
                 </div>
 
                 <h3 className="text-2xl font-bold text-slate-900 mb-3">
-                  Audio & Songs
+                  Voice & Audio
                 </h3>
 
                 <p className="text-base text-slate-600 leading-relaxed">
-                  Professional-quality music and voice recordings powered by ElevenLabs technology.
+                  Professional-quality voiceovers and audio content powered by ElevenLabs technology.
                 </p>
               </div>
             </div>
@@ -454,7 +454,7 @@ export default function Home() {
                   <svg className="w-6 h-6 text-violet-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-slate-700">2 songs/month</span>
+                  <span className="text-slate-700">2 voiceovers/month</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-6 h-6 text-violet-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -506,7 +506,7 @@ export default function Home() {
                   <svg className="w-6 h-6 text-white flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-white">20 songs/month</span>
+                  <span className="text-white">20 voiceovers/month</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-6 h-6 text-white flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -557,7 +557,7 @@ export default function Home() {
                   <svg className="w-6 h-6 text-violet-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-slate-700">Unlimited songs</span>
+                  <span className="text-slate-700">Unlimited voiceovers</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-6 h-6 text-violet-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -608,7 +608,7 @@ export default function Home() {
                 </h2>
 
                 <p className="text-xl sm:text-2xl text-violet-100 mb-10 max-w-2xl mx-auto">
-                  Join thousands of creators using <span className="font-bold text-white">dai+bed</span> to transform their content workflow
+                  Join thousands of creators using <span className="font-bold text-white">AI Influencer</span> to transform their content workflow
                 </p>
 
                 <div className="flex flex-col items-center gap-3">
@@ -643,18 +643,17 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-br from-violet-600 to-fuchsia-600 rounded-xl flex items-center justify-center shadow-lg shadow-violet-500/30">
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
-                dai+bed
+                AI Influencer
               </span>
             </div>
 
             {/* Copyright */}
             <p className="text-sm text-slate-600">
-              © 2025 dai+bed. All rights reserved.
+              © 2025 AI Influencer. All rights reserved.
             </p>
 
             {/* Links */}

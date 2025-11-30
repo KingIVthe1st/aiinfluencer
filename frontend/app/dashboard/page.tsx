@@ -104,7 +104,7 @@ export default function DashboardHome() {
 
   const statCards = [
     {
-      name: 'AI Singers',
+      name: 'AI Influencers',
       value: stats.totalSingers,
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -112,7 +112,7 @@ export default function DashboardHome() {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={2}
-            d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
           />
         </svg>
       ),
@@ -168,8 +168,8 @@ export default function DashboardHome() {
 
   const quickActions = [
     {
-      name: 'Create Singer',
-      description: 'Add a new AI singer with custom voice',
+      name: 'Create Influencer',
+      description: 'Add a new AI influencer with custom persona',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -233,9 +233,9 @@ export default function DashboardHome() {
         <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-violet-600 via-fuchsia-600 to-pink-600 p-8 shadow-2xl shadow-violet-500/40">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')] opacity-30" />
           <div className="relative z-10">
-            <h1 className="text-4xl font-bold text-white mb-3 drop-shadow-lg">Welcome to dai+bed Studio</h1>
+            <h1 className="text-4xl font-bold text-white mb-3 drop-shadow-lg">Welcome to AI Influencer Studio</h1>
             <p className="text-xl text-white/95 mb-6 max-w-2xl drop-shadow">
-              Create stunning AI-powered content with your custom singers. Let's get started!
+              Create stunning AI-powered content with your custom influencers. Let's get started!
             </p>
           </div>
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
@@ -267,9 +267,9 @@ export default function DashboardHome() {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')] opacity-30" />
 
         <div className="relative z-10">
-          <h1 className="text-4xl font-bold text-white mb-3 drop-shadow-lg">Welcome to dai+bed Studio</h1>
+          <h1 className="text-4xl font-bold text-white mb-3 drop-shadow-lg">Welcome to AI Influencer Studio</h1>
           <p className="text-xl text-white/95 mb-6 max-w-2xl drop-shadow">
-            Create stunning AI-powered content with your custom singers. Generate videos, images, and audio in seconds.
+            Create stunning AI-powered content with your custom influencers. Generate videos, images, and audio in seconds.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
@@ -409,7 +409,7 @@ export default function DashboardHome() {
                 Create Your First Project
               </PremiumButton>
               <PremiumButton variant="ghost" size="lg" onClick={() => (window.location.href = '/dashboard/singers')}>
-                Create a Singer
+                Create an Influencer
               </PremiumButton>
             </div>
           </PremiumCard>

@@ -178,7 +178,7 @@ export default function GenerateVideoPage() {
     }
 
     if (!selectedSingerId) {
-      setError('Please select a singer');
+      setError('Please select an influencer');
       return;
     }
 
@@ -353,7 +353,7 @@ export default function GenerateVideoPage() {
               <CardHeader>
                 <div className="flex items-center gap-2">
                   <User className="w-5 h-5 text-primary" />
-                  <CardTitle>Select Singer</CardTitle>
+                  <CardTitle>Select Influencer</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
@@ -366,7 +366,7 @@ export default function GenerateVideoPage() {
                 ) : singersError ? (
                   <EmptyState
                     icon={<AlertCircle className="w-12 h-12" />}
-                    title="Failed to load singers"
+                    title="Failed to load influencers"
                     description={singersError}
                     action={
                       <Button onClick={loadSingers} variant="outline">
@@ -377,11 +377,11 @@ export default function GenerateVideoPage() {
                 ) : singers.length === 0 ? (
                   <EmptyState
                     icon={<User className="w-12 h-12" />}
-                    title="No singers yet"
-                    description="Create your first AI singer to get started"
+                    title="No influencers yet"
+                    description="Create your first AI influencer to get started"
                     action={
                       <Button onClick={() => window.location.href = '/dashboard/singers'} variant="primary">
-                        Create Singer
+                        Create Influencer
                       </Button>
                     }
                   />
@@ -449,8 +449,8 @@ export default function GenerateVideoPage() {
                       value={prompt}
                       onChange={(e) => setPrompt(e.target.value)}
                       placeholder={mode === 'music-video'
-                        ? "A singer performing on stage with colorful lights..."
-                        : "A beautiful singer performing on stage..."}
+                        ? "An influencer creating content in a trendy studio with colorful lights..."
+                        : "A stunning influencer creating viral content..."}
                       rows={3}
                       required
                     />

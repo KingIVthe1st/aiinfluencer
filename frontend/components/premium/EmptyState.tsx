@@ -157,11 +157,11 @@ export const NoSingersEmptyState: React.FC<{ onCreateSinger: () => void }> = ({
   onCreateSinger,
 }) => (
   <EmptyState
-    illustration="music"
-    title="No singers yet"
-    description="Create your first AI singer to start generating music, images, and videos with a persistent persona."
+    illustration="image"
+    title="No influencers yet"
+    description="Create your first AI influencer to start generating images, videos, and content with a unique persona."
     action={{
-      label: 'Create Your First Singer',
+      label: 'Create Your First Influencer',
       onClick: onCreateSinger,
       icon: (
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

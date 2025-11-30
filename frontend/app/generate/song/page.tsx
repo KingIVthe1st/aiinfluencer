@@ -168,7 +168,7 @@ export default function GenerateSongPage() {
     e.preventDefault();
 
     if (!selectedSingerId) {
-      setError('Please select a singer');
+      setError('Please select an influencer');
       return;
     }
 
@@ -252,7 +252,7 @@ export default function GenerateSongPage() {
                 <GradientText>Generate Music & Audio</GradientText>
               </Heading>
               <Text size="lg" variant="muted">
-                Create songs, speech, and audio with your AI singers
+                Create voiceovers, speech, and audio with your AI influencers
               </Text>
             </div>
           </FadeIn>
@@ -314,7 +314,7 @@ export default function GenerateSongPage() {
                 <CardHeader>
                   <div className="flex items-center gap-2">
                     <User className="w-5 h-5 text-primary" />
-                    <CardTitle>Select Singer</CardTitle>
+                    <CardTitle>Select Influencer</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -327,7 +327,7 @@ export default function GenerateSongPage() {
                   ) : singersError ? (
                     <EmptyState
                       icon={<AlertCircle className="w-12 h-12" />}
-                      title="Failed to load singers"
+                      title="Failed to load influencers"
                       description={singersError}
                       action={
                         <Button onClick={loadSingers} variant="outline">
@@ -338,11 +338,11 @@ export default function GenerateSongPage() {
                   ) : singers.length === 0 ? (
                     <EmptyState
                       icon={<User className="w-12 h-12" />}
-                      title="No singers yet"
-                      description="Create your first AI singer to get started"
+                      title="No influencers yet"
+                      description="Create your first AI influencer to get started"
                       action={
                         <Button onClick={() => window.location.href = '/dashboard/singers'} variant="primary">
-                          Create Singer
+                          Create Influencer
                         </Button>
                       }
                     />

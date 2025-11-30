@@ -103,7 +103,7 @@ export default function GenerateImagePage() {
     e.preventDefault();
 
     if (!selectedSingerId) {
-      setError('Please select a singer');
+      setError('Please select an influencer');
       return;
     }
 
@@ -228,7 +228,7 @@ export default function GenerateImagePage() {
                 <GradientText>Generate Images</GradientText>
               </Heading>
               <Text size="lg" variant="muted">
-                Create stunning AI-generated images with your singers
+                Create stunning AI-generated images with your influencers
               </Text>
             </div>
           </FadeIn>
@@ -240,7 +240,7 @@ export default function GenerateImagePage() {
                 <CardHeader>
                   <div className="flex items-center gap-2">
                     <User className="w-5 h-5 text-primary" />
-                    <CardTitle>Select Singer</CardTitle>
+                    <CardTitle>Select Influencer</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -253,7 +253,7 @@ export default function GenerateImagePage() {
                   ) : singersError ? (
                     <EmptyState
                       icon={<AlertCircle className="w-12 h-12" />}
-                      title="Failed to load singers"
+                      title="Failed to load influencers"
                       description={singersError}
                       action={
                         <Button onClick={loadSingers} variant="outline">
@@ -264,11 +264,11 @@ export default function GenerateImagePage() {
                   ) : singers.length === 0 ? (
                     <EmptyState
                       icon={<User className="w-12 h-12" />}
-                      title="No singers yet"
-                      description="Create your first AI singer to get started"
+                      title="No influencers yet"
+                      description="Create your first AI influencer to get started"
                       action={
                         <Button onClick={() => window.location.href = '/dashboard/singers'} variant="primary">
-                          Create Singer
+                          Create Influencer
                         </Button>
                       }
                     />
@@ -314,10 +314,10 @@ export default function GenerateImagePage() {
                             onChange={(e) => setUsePersonaContext(e.target.checked)}
                             className="w-4 h-4 rounded border-border text-primary focus:ring-2 focus:ring-primary"
                           />
-                          <Text size="sm">Include singer's persona in generation</Text>
+                          <Text size="sm">Include influencer's persona in generation</Text>
                         </label>
                         <Text size="xs" variant="muted" className="ml-6 mt-1">
-                          Uses the singer's reference image to maintain consistency
+                          Uses the influencer's reference image to maintain consistency
                         </Text>
                       </div>
                     </ScaleIn>
@@ -362,7 +362,7 @@ export default function GenerateImagePage() {
                       <Textarea
                         value={prompt}
                         onChange={(e) => setPrompt(e.target.value)}
-                        placeholder="A beautiful singer performing on a grand stage with dramatic lighting..."
+                        placeholder="A stunning influencer creating content in a modern studio with dramatic lighting..."
                         rows={4}
                         required
                       />

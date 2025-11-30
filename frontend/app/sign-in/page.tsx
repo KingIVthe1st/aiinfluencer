@@ -78,7 +78,7 @@ function SignInForm() {
               <CardContent className="p-8">
                 <div className="text-center mb-8">
                   <Heading as="h1" className="mb-2">
-                    <GradientText>AI Singer Studio</GradientText>
+                    <GradientText>AI Influencer Studio</GradientText>
                   </Heading>
                   <Text variant="muted">Sign in to continue</Text>
                 </div>

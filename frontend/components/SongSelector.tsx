@@ -83,7 +83,7 @@ export function SongSelector({ singerId, selectedSongId, onSongSelect }: SongSel
               <Music className="w-12 h-12 mx-auto mb-3 text-gray-300" />
               <p className="text-gray-600 font-medium">No songs found</p>
               <p className="text-sm text-gray-500 mt-1">
-                Generate songs for this singer first to create music videos
+                Generate audio for this influencer first to create music videos
               </p>
             </div>
           ) : (

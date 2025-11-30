@@ -27,11 +27,11 @@ export default function DashboardLayout({ children, user }: DashboardLayoutProps
       ),
     },
     {
-      name: 'My Singers',
+      name: 'My Influencers',
       href: '/dashboard/singers',
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
         </svg>
       ),
     },
@@ -63,11 +63,11 @@ export default function DashboardLayout({ children, user }: DashboardLayoutProps
           ),
         },
         {
-          name: 'Audio',
+          name: 'Voiceovers',
           href: '/generate/song',
           icon: (
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
             </svg>
           ),
         },
@@ -123,70 +123,78 @@ export default function DashboardLayout({ children, user }: DashboardLayoutProps
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 relative overflow-hidden">
-      {/* Sophisticated Multi-Layer Gradient Mesh Background */}
+    <div className="min-h-screen bg-[#030014] text-white relative overflow-hidden">
+      {/* Animated Background Effects */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        {/* Primary gradient orb - top left */}
+        {/* Animated grid */}
         <div
-          className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-gradient-to-br from-violet-500/20 via-fuchsia-500/15 to-transparent rounded-full blur-3xl animate-pulse"
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: '60px 60px',
+          }}
+        />
+
+        {/* Gradient orbs */}
+        <div
+          className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-gradient-to-br from-violet-600/20 via-fuchsia-600/10 to-transparent rounded-full blur-3xl animate-pulse"
           style={{ animationDuration: '8s' }}
         />
-
-        {/* Secondary gradient orb - top right */}
         <div
-          className="absolute -top-20 -right-20 w-[500px] h-[500px] bg-gradient-to-bl from-pink-500/20 via-violet-400/15 to-transparent rounded-full blur-3xl animate-pulse"
+          className="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-gradient-to-tl from-fuchsia-600/20 via-violet-600/10 to-transparent rounded-full blur-3xl animate-pulse"
           style={{ animationDuration: '10s', animationDelay: '2s' }}
         />
-
-        {/* Bottom accent orbs */}
-        <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-gradient-to-t from-violet-500/15 to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-gradient-to-t from-fuchsia-500/15 to-transparent rounded-full blur-3xl" />
-
-        {/* Noise texture overlay for depth */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')] opacity-20" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-600/5 rounded-full blur-[200px]" />
       </div>
 
-      {/* Premium Glassmorphic Sidebar */}
+      {/* Premium Dark Sidebar */}
       <aside
         className={`fixed top-0 left-0 h-full z-40 transition-all duration-500 ${
           isSidebarOpen ? 'w-64' : 'w-20'
         }`}
       >
-        <div className="h-full bg-white/70 backdrop-blur-md md:backdrop-blur-xl lg:backdrop-blur-2xl border-r border-slate-200/50 shadow-xl shadow-violet-500/5 flex flex-col">
+        <div className="h-full bg-[#0a0a1a]/80 backdrop-blur-2xl border-r border-white/5 flex flex-col">
           {/* Logo Section */}
-          <div className="p-6 border-b border-slate-200/50">
-            <div className="flex items-center gap-3 group">
+          <div className="p-6 border-b border-white/5">
+            <Link href="/" className="flex items-center gap-3 group">
               <div className="relative">
                 {/* Animated glow background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-600 to-fuchsia-600 rounded-2xl blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-violet-600 to-fuchsia-600 rounded-xl blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Icon container */}
-                <div className="relative w-11 h-11 bg-gradient-to-br from-violet-600 via-fuchsia-600 to-violet-600 rounded-2xl flex items-center justify-center shadow-xl shadow-violet-500/40 group-hover:shadow-violet-500/60 transition-all duration-500 group-hover:scale-105">
+                <div className="relative w-11 h-11 bg-gradient-to-br from-violet-600 via-fuchsia-600 to-violet-600 rounded-xl flex items-center justify-center shadow-xl shadow-violet-500/40 group-hover:shadow-violet-500/60 transition-all duration-500 group-hover:scale-105">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      strokeWidth={2.5}
-                      d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
+                      strokeWidth={2}
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                     />
                   </svg>
                 </div>
               </div>
 
               {isSidebarOpen && (
-                <span className="text-2xl font-bold bg-gradient-to-r from-violet-700 via-fuchsia-600 to-violet-700 bg-clip-text text-transparent tracking-tight">
-                  dai+bed
-                </span>
+                <div className="flex flex-col">
+                  <span className="text-xl font-bold tracking-tight">
+                    <span className="bg-gradient-to-r from-white via-violet-200 to-white bg-clip-text text-transparent">AI</span>
+                    <span className="text-white/60 font-light ml-1">Influencer</span>
+                  </span>
+                  <span className="text-[10px] text-white/30 uppercase tracking-widest">Studio</span>
+                </div>
               )}
-            </div>
+            </Link>
 
             {/* Collapse toggle */}
             <button
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              className="absolute top-6 -right-3 w-6 h-6 bg-white border border-slate-200 rounded-full shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300 group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
+              className="absolute top-6 -right-3 w-6 h-6 bg-[#0a0a1a] border border-white/10 rounded-full shadow-lg flex items-center justify-center hover:border-violet-500/50 transition-all duration-300 group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
             >
               <svg
-                className={`w-3 h-3 text-slate-600 transition-transform duration-300 ${
+                className={`w-3 h-3 text-white/60 group-hover:text-violet-400 transition-all duration-300 ${
                   isSidebarOpen ? '' : 'rotate-180'
                 }`}
                 fill="none"
@@ -206,16 +214,16 @@ export default function DashboardLayout({ children, user }: DashboardLayoutProps
                   <div key={item.name}>
                     <button
                       onClick={() => setIsGenerateOpen(!isGenerateOpen)}
-                      className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-300 group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600 ${
+                      className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600 ${
                         isGenerateOpen
-                          ? 'bg-gradient-to-r from-violet-50 to-fuchsia-50 text-violet-700'
-                          : 'text-slate-700 hover:bg-white/60 hover:text-violet-600'
+                          ? 'bg-white/5 text-white'
+                          : 'text-white/60 hover:bg-white/5 hover:text-white'
                       }`}
                     >
                       <div className="flex items-center gap-3">
                         <div
                           className={`transition-colors duration-300 ${
-                            isGenerateOpen ? 'text-violet-600' : 'text-slate-500 group-hover:text-violet-600'
+                            isGenerateOpen ? 'text-violet-400' : 'text-white/40 group-hover:text-violet-400'
                           }`}
                         >
                           {item.icon}
@@ -224,7 +232,7 @@ export default function DashboardLayout({ children, user }: DashboardLayoutProps
                       </div>
                       {isSidebarOpen && (
                         <svg
-                          className={`w-4 h-4 transition-transform duration-300 ${
+                          className={`w-4 h-4 text-white/40 transition-transform duration-300 ${
                             isGenerateOpen ? 'rotate-90' : ''
                           }`}
                           fill="none"
@@ -238,7 +246,7 @@ export default function DashboardLayout({ children, user }: DashboardLayoutProps
 
                     {/* Dropdown items */}
                     {isGenerateOpen && isSidebarOpen && (
-                      <div className="mt-1 ml-4 space-y-1 border-l-2 border-violet-200 pl-4">
+                      <div className="mt-1 ml-4 space-y-1 border-l border-white/10 pl-4">
                         {item.children.map((child) => {
                           const childActive = isActive(child.href);
                           return (
@@ -247,11 +255,11 @@ export default function DashboardLayout({ children, user }: DashboardLayoutProps
                               href={child.href}
                               className={`flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600 ${
                                 childActive
-                                  ? 'bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white shadow-lg shadow-violet-500/40'
-                                  : 'text-slate-600 hover:bg-white/60 hover:text-violet-600'
+                                  ? 'bg-gradient-to-r from-violet-600/20 to-fuchsia-600/20 text-white border border-violet-500/30'
+                                  : 'text-white/50 hover:bg-white/5 hover:text-white'
                               }`}
                             >
-                              {child.icon}
+                              <span className={childActive ? 'text-violet-400' : 'text-white/40'}>{child.icon}</span>
                               <span>{child.name}</span>
                             </Link>
                           );
@@ -267,10 +275,10 @@ export default function DashboardLayout({ children, user }: DashboardLayoutProps
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-300 group relative overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600 ${
+                  className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 group relative overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600 ${
                     active
-                      ? 'bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white shadow-lg shadow-violet-500/40'
-                      : 'text-slate-700 hover:bg-white/60 hover:text-violet-600'
+                      ? 'bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white shadow-lg shadow-violet-500/25'
+                      : 'text-white/60 hover:bg-white/5 hover:text-white'
                   }`}
                 >
                   {active && (
@@ -280,7 +288,7 @@ export default function DashboardLayout({ children, user }: DashboardLayoutProps
                   <div className="relative flex items-center gap-3">
                     <div
                       className={`transition-colors duration-300 ${
-                        active ? 'text-white' : 'text-slate-500 group-hover:text-violet-600'
+                        active ? 'text-white' : 'text-white/40 group-hover:text-violet-400'
                       }`}
                     >
                       {item.icon}
@@ -289,7 +297,11 @@ export default function DashboardLayout({ children, user }: DashboardLayoutProps
                   </div>
 
                   {item.badge && isSidebarOpen && (
-                    <span className="relative px-2 py-0.5 text-xs font-bold text-violet-600 bg-violet-100 rounded-full">
+                    <span className={`relative px-2 py-0.5 text-xs font-bold rounded-full ${
+                      active
+                        ? 'text-violet-600 bg-white'
+                        : 'text-violet-400 bg-violet-500/20'
+                    }`}>
                       {item.badge}
                     </span>
                   )}
@@ -299,29 +311,29 @@ export default function DashboardLayout({ children, user }: DashboardLayoutProps
           </nav>
 
           {/* User Profile Section */}
-          <div className="p-4 border-t border-slate-200/50">
-            <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/60 backdrop-blur-xl border border-slate-200/50 group hover:bg-white/80 transition-all duration-300">
+          <div className="p-4 border-t border-white/5">
+            <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/5 group hover:bg-white/10 hover:border-white/10 transition-all duration-300">
               {/* Avatar */}
               <div className="relative">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-600 to-fuchsia-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-violet-500/40">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-600 to-fuchsia-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-violet-500/30">
                   {user?.email?.[0]?.toUpperCase() || 'U'}
                 </div>
-                <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full" />
+                <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-[#0a0a1a] rounded-full" />
               </div>
 
               {isSidebarOpen && (
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-slate-900 truncate">
+                  <p className="text-sm font-semibold text-white truncate">
                     {user?.name || user?.email?.split('@')[0]}
                   </p>
-                  <p className="text-xs text-slate-500 truncate">{user?.email}</p>
+                  <p className="text-xs text-white/40 truncate">{user?.email}</p>
                 </div>
               )}
 
               {isSidebarOpen && (
                 <button
                   onClick={handleLogout}
-                  className="p-1.5 rounded-lg text-slate-400 hover:text-violet-600 hover:bg-violet-50 transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
+                  className="p-1.5 rounded-lg text-white/40 hover:text-white hover:bg-white/10 transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
                   title="Sign out"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -346,17 +358,17 @@ export default function DashboardLayout({ children, user }: DashboardLayoutProps
         }`}
       >
         {/* Top Header Bar */}
-        <header className="sticky top-0 z-30 bg-white/60 backdrop-blur-md md:backdrop-blur-xl lg:backdrop-blur-2xl border-b border-slate-200/50 shadow-sm shadow-violet-500/5">
+        <header className="sticky top-0 z-30 bg-[#030014]/80 backdrop-blur-2xl border-b border-white/5">
           <div className="px-8 py-5 flex items-center justify-between">
             {/* Breadcrumbs */}
             <div className="flex items-center gap-2 text-sm">
-              <span className="text-slate-500">Dashboard</span>
+              <span className="text-white/40">Dashboard</span>
               {pathname !== '/dashboard' && (
                 <>
-                  <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                  <span className="font-semibold text-violet-700">
+                  <span className="font-semibold bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
                     {pathname.split('/').pop()?.replace('-', ' ').replace(/\b\w/g, (l) => l.toUpperCase())}
                   </span>
                 </>
@@ -365,7 +377,7 @@ export default function DashboardLayout({ children, user }: DashboardLayoutProps
 
             {/* Quick Actions */}
             <div className="flex items-center gap-3">
-              <button className="p-2.5 rounded-xl text-slate-600 hover:text-violet-600 hover:bg-white/60 transition-all duration-300 relative focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600">
+              <button className="p-2.5 rounded-xl text-white/40 hover:text-white hover:bg-white/5 transition-all duration-300 relative focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
@@ -374,16 +386,18 @@ export default function DashboardLayout({ children, user }: DashboardLayoutProps
                     d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
                   />
                 </svg>
-                <span className="absolute top-1 right-1 w-2 h-2 bg-fuchsia-500 rounded-full animate-pulse" />
+                <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-fuchsia-500 rounded-full animate-pulse" />
               </button>
 
               <Link
                 href="/generate/video"
-                className="group relative px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-xl shadow-lg shadow-violet-500/40 hover:shadow-xl hover:shadow-violet-500/60 transition-all duration-500 hover:scale-105 overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
+                className="group relative px-5 py-2.5 overflow-hidden rounded-xl"
               >
+                <div className="absolute inset-0 bg-gradient-to-r from-violet-600 to-fuchsia-600 transition-all duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-violet-600 to-fuchsia-600 blur-xl opacity-50 group-hover:opacity-80 transition-opacity duration-300" />
                 {/* Animated shine effect */}
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-                <span className="relative flex items-center gap-2">
+                <span className="relative flex items-center gap-2 text-sm font-semibold text-white">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                   </svg>
@@ -395,7 +409,7 @@ export default function DashboardLayout({ children, user }: DashboardLayoutProps
         </header>
 
         {/* Page Content */}
-        <main className="p-8">{children}</main>
+        <main className="p-8 relative z-10">{children}</main>
       </div>
     </div>
   );

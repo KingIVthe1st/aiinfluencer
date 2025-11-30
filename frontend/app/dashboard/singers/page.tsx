@@ -276,7 +276,7 @@ export default function SingersPage() {
         profileImageUrl: generatedImageUrl || undefined,
       });
 
-      setSuccess('Singer created successfully!');
+      setSuccess('Influencer created successfully!');
 
       // Reset form
       setName('');
@@ -312,7 +312,7 @@ export default function SingersPage() {
         <div className="space-y-8">
           <FadeIn>
             <Heading as="h1">
-              <GradientText>My Singers</GradientText>
+              <GradientText>My Influencers</GradientText>
             </Heading>
           </FadeIn>
           <LoadingSkeleton variant="card" count={3} />
@@ -328,7 +328,7 @@ export default function SingersPage() {
         <FadeIn>
           <div className="flex justify-between items-center">
             <Heading as="h1">
-              <GradientText>My Singers</GradientText>
+              <GradientText>My Influencers</GradientText>
             </Heading>
           </div>
         </FadeIn>
@@ -364,8 +364,8 @@ export default function SingersPage() {
         <FadeIn delay={0.1}>
           <PremiumCard variant="glass" padding="lg">
             <PremiumCardHeader
-              title="Create New Singer"
-              subtitle="Design your AI singer with custom voice and persona"
+              title="Create New Influencer"
+              subtitle="Design your AI influencer with custom voice and persona"
             />
 
             <form onSubmit={handleCreateSinger} className="space-y-8 mt-6">
@@ -374,24 +374,24 @@ export default function SingersPage() {
                 <div className="space-y-6">
                   <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                     <div>
-                      <Label required>Singer Name</Label>
+                      <Label required>Influencer Name</Label>
                       <Input
                         type="text"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        placeholder="e.g., Luna"
+                        placeholder="e.g., Luna, Kai, Maya"
                         required
                         className="bg-white/5 border-white/10 focus:border-violet-500"
                       />
                     </div>
 
                     <div>
-                      <Label>Genre</Label>
+                      <Label>Niche / Category</Label>
                       <Input
                         type="text"
                         value={genre}
                         onChange={(e) => setGenre(e.target.value)}
-                        placeholder="e.g., Pop, Rock, Jazz"
+                        placeholder="e.g., Fashion, Fitness, Tech, Lifestyle"
                         className="bg-white/5 border-white/10 focus:border-violet-500"
                       />
                     </div>
@@ -403,7 +403,7 @@ export default function SingersPage() {
                       value={description}
                       onChange={(e) => setDescription(e.target.value)}
                       rows={3}
-                      placeholder="Describe your singer's style and personality..."
+                      placeholder="Describe your influencer's personality, style, and content focus..."
                       className="bg-white/5 border-white/10 focus:border-violet-500"
                     />
                   </div>
@@ -624,7 +624,7 @@ export default function SingersPage() {
                   glow
                   icon={<Sparkles className="w-5 h-5" />}
                 >
-                  {creating ? 'Creating Singer...' : 'Create Singer'}
+                  {creating ? 'Creating Influencer...' : 'Create Influencer'}
                 </PremiumButton>
               </div>
             </form>
@@ -636,7 +636,7 @@ export default function SingersPage() {
           <div>
             <FadeIn delay={0.4}>
               <Heading as="h2" className="mb-6">
-                <GradientText>Your Singers</GradientText>
+                <GradientText>Your Influencers</GradientText>
               </Heading>
             </FadeIn>
 

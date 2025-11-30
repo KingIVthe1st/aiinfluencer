@@ -1,0 +1,175 @@
+# AI Influencer - Wrangler Configuration
+# NOTE: This is a NEW project, completely separate from ai-singer-studio
+# You must create NEW Cloudflare resources before deploying:
+# - D1 Database: wrangler d1 create ai-influencer-db
+# - R2 Buckets: wrangler r2 bucket create ai-influencer-assets
+#               wrangler r2 bucket create ai-influencer-video-assets
+# - KV Namespaces: wrangler kv:namespace create VIDEO_HISTORY
+#                  wrangler kv:namespace create SESSIONS
+#                  wrangler kv:namespace create CACHE
+# - Queue: wrangler queues create ai-influencer-jobs
+
+name = "ai-influencer"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Worker configuration
+workers_dev = true
+
+# D1 Database - CREATE NEW: wrangler d1 create ai-influencer-db
+# Then update the database_id below with the new ID
+[[d1_databases]]
+binding = "DB"
+database_name = "ai-influencer-db"
+database_id = "REPLACE_WITH_NEW_DATABASE_ID"
+
+# R2 Buckets for storing generated assets
+# CREATE NEW: wrangler r2 bucket create ai-influencer-assets
+[[r2_buckets]]
+binding = "ASSETS_BUCKET"
+bucket_name = "ai-influencer-assets"
+
+# CREATE NEW: wrangler r2 bucket create ai-influencer-video-assets
+[[r2_buckets]]
+binding = "VIDEO_ASSETS"
+bucket_name = "ai-influencer-video-assets"
+
+# KV Namespaces - CREATE NEW for each:
+# wrangler kv:namespace create VIDEO_HISTORY
+# wrangler kv:namespace create SESSIONS
+# wrangler kv:namespace create CACHE
+# Then update the IDs below
+[[kv_namespaces]]
+binding = "VIDEO_HISTORY"
+id = "REPLACE_WITH_NEW_KV_ID_VIDEO_HISTORY"
+
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "REPLACE_WITH_NEW_KV_ID_SESSIONS"
+
+[[kv_namespaces]]
+binding = "CACHE"
+id = "REPLACE_WITH_NEW_KV_ID_CACHE"
+
+# Durable Objects
+[[durable_objects.bindings]]
+name = "QUOTA_MANAGER"
+class_name = "QuotaManager"
+script_name = "ai-influencer"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["QuotaManager"]
+
+# Queues - CREATE NEW: wrangler queues create ai-influencer-jobs
+[[queues.producers]]
+binding = "JOB_QUEUE"
+queue = "ai-influencer-jobs"
+
+[[queues.consumers]]
+queue = "ai-influencer-jobs"
+max_batch_size = 10
+max_batch_timeout = 30
+max_retries = 3
+retry_delay = 5
+
+# Environment Variables (use wrangler secret for sensitive values)
+[vars]
+ENVIRONMENT = "development"
+CLERK_PUBLISHABLE_KEY = ""
+CLOUDFLARE_ACCOUNT_ID = "REPLACE_WITH_YOUR_ACCOUNT_ID"
+R2_ACCOUNT_ID = "REPLACE_WITH_YOUR_ACCOUNT_ID"
+
+# Secrets to set via CLI:
+# wrangler secret put GEMINI_API_KEY
+# wrangler secret put ELEVENLABS_API_KEY
+# wrangler secret put OPENAI_API_KEY
+# wrangler secret put VEO3_API_KEY
+# wrangler secret put KIE_API_KEY
+# wrangler secret put STRIPE_SECRET_KEY
+# wrangler secret put STRIPE_WEBHOOK_SECRET
+# wrangler secret put CLERK_SECRET_KEY
+# wrangler secret put ASSETS_PUBLIC_URL
+# wrangler secret put R2_ACCESS_KEY_ID
+# wrangler secret put R2_SECRET_ACCESS_KEY
+
+# Stream API
+[ai]
+binding = "AI"
+
+# Analytics Engine
+[[analytics_engine_datasets]]
+binding = "ANALYTICS"
+
+# Development environment
+[env.development]
+vars = { ENVIRONMENT = "development" }
+
+# Staging environment
+[env.staging]
+vars = { ENVIRONMENT = "staging" }
+# route = "staging.aiinfluencer.studio/*"
+
+# Production environment
+[env.production]
+compatibility_flags = ["nodejs_compat"]
+vars = { ENVIRONMENT = "production", CLOUDFLARE_ACCOUNT_ID = "REPLACE_WITH_YOUR_ACCOUNT_ID", R2_ACCOUNT_ID = "REPLACE_WITH_YOUR_ACCOUNT_ID", CLERK_PUBLISHABLE_KEY = "" }
+# route = "aiinfluencer.studio/*" # Uncomment when domain is configured
+workers_dev = true
+
+# Production inherits all bindings from root config
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "ai-influencer-db"
+database_id = "REPLACE_WITH_NEW_DATABASE_ID"
+
+[[env.production.r2_buckets]]
+binding = "ASSETS_BUCKET"
+bucket_name = "ai-influencer-assets"
+
+[[env.production.r2_buckets]]
+binding = "VIDEO_ASSETS"
+bucket_name = "ai-influencer-video-assets"
+
+[[env.production.kv_namespaces]]
+binding = "VIDEO_HISTORY"
+id = "REPLACE_WITH_NEW_KV_ID_VIDEO_HISTORY"
+
+[[env.production.kv_namespaces]]
+binding = "SESSIONS"
+id = "REPLACE_WITH_NEW_KV_ID_SESSIONS"
+
+[[env.production.kv_namespaces]]
+binding = "CACHE"
+id = "REPLACE_WITH_NEW_KV_ID_CACHE"
+
+[[env.production.durable_objects.bindings]]
+name = "QUOTA_MANAGER"
+class_name = "QuotaManager"
+script_name = "ai-influencer"
+
+[[env.production.queues.producers]]
+binding = "JOB_QUEUE"
+queue = "ai-influencer-jobs"
+
+[[env.production.queues.consumers]]
+queue = "ai-influencer-jobs"
+max_batch_size = 10
+max_batch_timeout = 30
+max_retries = 3
+retry_delay = 5
+
+[env.production.ai]
+binding = "AI"
+
+[[env.production.analytics_engine_datasets]]
+binding = "ANALYTICS"
+
+# Browser Rendering API for video merging
+[env.production.browser]
+binding = "BROWSER"
+
+# Limits
+[limits]
+cpu_ms = 50000 # 50 seconds for long-running video operations

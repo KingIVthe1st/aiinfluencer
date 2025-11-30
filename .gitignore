@@ -1,0 +1,116 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+.next/
+out/
+dist/
+.vercel/
+
+# Cloudflare
+.wrangler/
+.dev.vars
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test files
+*.test.js
+*.spec.js
+coverage/
+
+# Temp files
+*.tmp
+*.temp
+music-videos/
+
+# Old documentation from cloned project
+400_ERROR_VISUAL_DIAGRAM.txt
+BACKEND_SCHEMA_UPDATE_COMPLETE.md
+BROWSER_API_FIX.md
+BROWSER_API_README.md
+BROWSER_API_SETUP_SUMMARY.md
+BROWSER_API_STATUS_READY_TO_TEST.md
+BROWSER_API_TEST_INSTRUCTIONS.md
+BROWSER_RENDERING_API_SETUP.md
+COMPLETE_FRONTEND_READY.md
+COMPLETE_STATUS_REPORT.md
+CRITICAL_FIXES_DEPLOYED.md
+DASHBOARD_FIX_COMPLETE.md
+DASHBOARD_FIX_FINAL.md
+DEPLOYMENT_INSTRUCTIONS.md
+DEPLOYMENT_READY_CHECKLIST.md
+E2E_TEST_REPORT.md
+ENABLE_BROWSER_API_DASHBOARD.md
+ENABLE_BROWSER_API_NOW.md
+ERROR_TRACKING_FIX_REPORT.md
+FFMPEG_IMPLEMENTATION_GUIDE.md
+FIND_AND_UPDATE_FRONTEND.md
+FRONTEND_DEPLOYED_SUCCESS.md
+FRONTEND_INTEGRATION_GUIDE.md
+IMAGE_GENERATION_400_ERROR_ANALYSIS.md
+MANUAL_DEPLOYMENT_STEPS.md
+MUSIC_API_DOCUMENTATION.md
+MUSIC_GENERATION_MASTER_PLAN.md
+MUSIC_SYSTEM_ARCHITECTURE.md
+MUSIC_SYSTEM_COMPLETE_SUMMARY.md
+MUSIC_VIDEO_DEPLOYMENT_GUIDE.md
+MUSIC_VIDEO_IMPLEMENTATION_COMPLETE.md
+MUSIC_VIDEO_TEST_REPORT.md
+OPTION_B_COMPLETE.md
+PHASE_1_2_COMPLETE.md
+PROJECT_ANALYSIS_COMPREHENSIVE.md
+PRO_TIER_AUTO_UPGRADE_SUCCESS.md
+PUPPETEER_FIX_COMPLETE.md
+QUICK_REFERENCE_MUSIC_SYSTEM.md
+QUICK_START.md
+QUICK_START_BROWSER_API.md
+ROUND_3_AUDIT_REPORT.md
+RUN_TEST_MANUALLY.md
+SINGER_PROFILE_SYSTEM_ANALYSIS.md
+START_HERE.md
+STATUS_REPORT.md
+TEST_REPORT_AUTOMATED.md
+TESTING_GUIDE_MUSIC_VIDEO.md
+TESTING_SUMMARY.md
+VOICE_GENERATION_FIX_COMPLETE.md
+debug-api-response.html
+deploy-fix.sh
+enable-browser-rendering.sh
+monitor-production.sh
+quick-test.sh
+run-test.sh
+test-api.js
+test-browser-api.sh
+test-dashboard-browser.html
+test-dashboard-fix.sh
+test-dashboard-playwright.js
+test-music-workflow.sh
+test-schema.js
+test-voice-generation.html
+test-zod-strict.js
+update-singers-userid.sql
+verify-pro-tier.py
+verify-zod.js
+wrangler.toml.browser-example
+r2-cors.json

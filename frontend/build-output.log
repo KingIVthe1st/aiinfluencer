@@ -1,0 +1,60 @@
+
+> ai-singer-studio-frontend@1.0.0 build
+> next build
+
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/ivanjackson/package-lock.json as the root directory.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles: 
+   * /Users/ivanjackson/Desktop/soraveo/video-gen-platform/frontend/package-lock.json
+   * /Users/ivanjackson/Desktop/soraveo/video-gen-platform/package-lock.json
+
+   ▲ Next.js 15.5.2
+   - Environments: .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 4.4s
+   Skipping validation of types
+   Skipping linting
+   Collecting page data ...
+ ⚠ Using edge runtime on a page currently disables static generation for that page
+   Generating static pages (0/18) ...
+   Generating static pages (4/18) 
+   Generating static pages (8/18) 
+   Generating static pages (13/18) 
+ ✓ Generating static pages (18/18)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    8.76 kB         114 kB
+├ ○ /_not-found                            992 B         103 kB
+├ ○ /dashboard                           3.04 kB         108 kB
+├ ○ /dashboard/gallery                   5.19 kB         111 kB
+├ ○ /dashboard/jobs                      5.08 kB         111 kB
+├ ○ /dashboard/music                      5.2 kB         111 kB
+├ ƒ /dashboard/music/[id]                5.54 kB         111 kB
+├ ƒ /dashboard/music/[id]/edit           4.67 kB         110 kB
+├ ƒ /dashboard/music/[id]/generate       5.39 kB         111 kB
+├ ƒ /dashboard/music/[id]/lyrics         5.25 kB         111 kB
+├ ○ /dashboard/music/create              6.23 kB         108 kB
+├ ○ /dashboard/settings                   5.1 kB         111 kB
+├ ○ /dashboard/singers                    5.1 kB         111 kB
+├ ƒ /dashboard/singers/[id]              4.87 kB         110 kB
+├ ○ /dashboard/singers/profile           4.62 kB         114 kB
+├ ○ /design-system-demo                  2.86 kB         109 kB
+├ ○ /generate/image                      3.52 kB         109 kB
+├ ○ /generate/song                        3.2 kB         109 kB
+├ ○ /generate/video                      3.93 kB         110 kB
+├ ○ /sign-in                             3.13 kB         109 kB
+└ ○ /sign-up                               630 B         106 kB
++ First Load JS shared by all             102 kB
+  ├ chunks/255-e3bf15caf1f1e0f9.js       45.7 kB
+  ├ chunks/4bd1b696-c023c6e3521b1417.js  54.2 kB
+  └ other shared chunks (total)          1.95 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

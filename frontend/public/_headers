@@ -1,0 +1,6 @@
+# Headers for SharedArrayBuffer support (required by FFmpeg.wasm)
+# These headers enable cross-origin isolation which allows SharedArrayBuffer
+# Using 'credentialless' for COEP to allow cross-origin requests to R2 storage
+/*
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: credentialless

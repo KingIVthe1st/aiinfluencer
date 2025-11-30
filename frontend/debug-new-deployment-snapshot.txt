@@ -1,0 +1,13 @@
+uid=2_0 RootWebArea "AI Singer Studio" url="https://f657f2b5.ai-singer-studio-frontend.pages.dev/sign-in?redirect=%2Fdashboard%2Fsingers"
+  uid=2_1 heading "AI Singer Studio" level="1"
+  uid=2_2 StaticText "Sign in to continue"
+  uid=2_3 StaticText "Access Token"
+  uid=2_4 StaticText "*"
+  uid=2_5 textbox "Enter your access token" required
+  uid=2_6 StaticText "Use format: test-token-yourname or your user ID"
+  uid=2_7 button "Sign In" disableable disabled
+  uid=2_8 StaticText "Don't have an account?"
+  uid=2_9 link "Sign up" url="https://f657f2b5.ai-singer-studio-frontend.pages.dev/sign-up"
+    uid=2_10 StaticText "Sign up"
+  uid=2_11 StaticText "Quick Test Access:"
+  uid=2_12 button "Use Production Token"

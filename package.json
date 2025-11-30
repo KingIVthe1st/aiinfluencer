@@ -1,0 +1,46 @@
+{
+  "name": "ai-influencer",
+  "version": "1.0.0",
+  "description": "AI Influencer - Generate persistent AI personas, images, content, and videos",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler pages dev public --compatibility-date=2024-01-01",
+    "dev:worker": "wrangler dev src/index.ts",
+    "deploy": "wrangler pages deploy public",
+    "deploy:worker": "wrangler deploy",
+    "db:migrate": "wrangler d1 migrations apply ai-influencer-db",
+    "db:migrate:local": "wrangler d1 migrations apply ai-influencer-db --local",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src tests"
+  },
+  "dependencies": {
+    "@clerk/backend": "^1.0.0",
+    "@cloudflare/puppeteer": "^1.0.4",
+    "@google/generative-ai": "^0.21.0",
+    "@hono/zod-validator": "^0.7.4",
+    "aws4fetch": "^1.0.20",
+    "drizzle-orm": "^0.35.0",
+    "hono": "^4.0.0",
+    "openai": "^6.1.0",
+    "stripe": "^14.0.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241127.0",
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "@typescript-eslint/parser": "^6.17.0",
+    "@vitest/ui": "^2.0.0",
+    "drizzle-kit": "^0.26.0",
+    "eslint": "^8.56.0",
+    "miniflare": "^3.0.0",
+    "playwright": "^1.40.0",
+    "typescript": "^5.3.3",
+    "vitest": "^2.0.0",
+    "wrangler": "^3.0.0"
+  }
+}

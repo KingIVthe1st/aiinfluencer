@@ -1,0 +1,234 @@
+{
+  "brand": {
+    "name": "AI Singer Studio",
+    "tagline": "Create. Perform. Inspire.",
+    "description": "Premium AI-powered music video generation platform"
+  },
+  "colors": {
+    "primary": {
+      "50": "#f0f0ff",
+      "100": "#e5e5ff",
+      "200": "#d0d0ff",
+      "300": "#adadff",
+      "400": "#8080ff",
+      "500": "#6366f1",
+      "600": "#4f46e5",
+      "700": "#4338ca",
+      "800": "#3730a3",
+      "900": "#312e81",
+      "950": "#1e1b4b"
+    },
+    "accent": {
+      "50": "#fff0f5",
+      "100": "#ffe5ef",
+      "200": "#ffd0e0",
+      "300": "#ffadc8",
+      "400": "#ff80ad",
+      "500": "#f43f5e",
+      "600": "#e11d48",
+      "700": "#be123c",
+      "800": "#9f1239",
+      "900": "#881337",
+      "950": "#4c0519"
+    },
+    "neutral": {
+      "50": "#fafafa",
+      "100": "#f5f5f5",
+      "200": "#e5e5e5",
+      "300": "#d4d4d4",
+      "400": "#a3a3a3",
+      "500": "#737373",
+      "600": "#525252",
+      "700": "#404040",
+      "800": "#262626",
+      "900": "#171717",
+      "950": "#0a0a0a"
+    },
+    "success": {
+      "50": "#f0fdf4",
+      "100": "#dcfce7",
+      "200": "#bbf7d0",
+      "300": "#86efac",
+      "400": "#4ade80",
+      "500": "#22c55e",
+      "600": "#16a34a",
+      "700": "#15803d",
+      "800": "#166534",
+      "900": "#14532d"
+    },
+    "warning": {
+      "50": "#fffbeb",
+      "100": "#fef3c7",
+      "200": "#fde68a",
+      "300": "#fcd34d",
+      "400": "#fbbf24",
+      "500": "#f59e0b",
+      "600": "#d97706",
+      "700": "#b45309",
+      "800": "#92400e",
+      "900": "#78350f"
+    },
+    "error": {
+      "50": "#fef2f2",
+      "100": "#fee2e2",
+      "200": "#fecaca",
+      "300": "#fca5a5",
+      "400": "#f87171",
+      "500": "#ef4444",
+      "600": "#dc2626",
+      "700": "#b91c1c",
+      "800": "#991b1b",
+      "900": "#7f1d1d"
+    },
+    "gradient": {
+      "primary": "linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%)",
+      "accent": "linear-gradient(135deg, #f43f5e 0%, #fb7185 50%, #fda4af 100%)",
+      "mesh": "radial-gradient(at 0% 0%, #6366f1 0%, transparent 50%), radial-gradient(at 100% 0%, #f43f5e 0%, transparent 50%), radial-gradient(at 100% 100%, #8b5cf6 0%, transparent 50%), radial-gradient(at 0% 100%, #d946ef 0%, transparent 50%)"
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "sans": "var(--font-inter), system-ui, -apple-system, sans-serif",
+      "display": "var(--font-cal), system-ui, -apple-system, sans-serif",
+      "mono": "var(--font-jetbrains), 'Monaco', 'Courier New', monospace"
+    },
+    "fontSize": {
+      "xs": {
+        "value": "clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)",
+        "lineHeight": "1.5"
+      },
+      "sm": {
+        "value": "clamp(0.875rem, 0.825rem + 0.25vw, 1rem)",
+        "lineHeight": "1.5"
+      },
+      "base": {
+        "value": "clamp(1rem, 0.95rem + 0.25vw, 1.125rem)",
+        "lineHeight": "1.6"
+      },
+      "lg": {
+        "value": "clamp(1.125rem, 1.05rem + 0.375vw, 1.25rem)",
+        "lineHeight": "1.5"
+      },
+      "xl": {
+        "value": "clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem)",
+        "lineHeight": "1.4"
+      },
+      "2xl": {
+        "value": "clamp(1.5rem, 1.35rem + 0.75vw, 1.875rem)",
+        "lineHeight": "1.3"
+      },
+      "3xl": {
+        "value": "clamp(1.875rem, 1.65rem + 1.125vw, 2.25rem)",
+        "lineHeight": "1.2"
+      },
+      "4xl": {
+        "value": "clamp(2.25rem, 1.95rem + 1.5vw, 3rem)",
+        "lineHeight": "1.1"
+      },
+      "5xl": {
+        "value": "clamp(3rem, 2.55rem + 2.25vw, 3.75rem)",
+        "lineHeight": "1"
+      },
+      "6xl": {
+        "value": "clamp(3.75rem, 3.15rem + 3vw, 4.5rem)",
+        "lineHeight": "1"
+      }
+    },
+    "fontWeight": {
+      "light": "300",
+      "normal": "400",
+      "medium": "500",
+      "semibold": "600",
+      "bold": "700",
+      "extrabold": "800"
+    },
+    "letterSpacing": {
+      "tight": "-0.025em",
+      "normal": "0em",
+      "wide": "0.025em",
+      "wider": "0.05em",
+      "widest": "0.1em"
+    }
+  },
+  "spacing": {
+    "0": "0",
+    "1": "0.25rem",
+    "2": "0.5rem",
+    "3": "0.75rem",
+    "4": "1rem",
+    "5": "1.25rem",
+    "6": "1.5rem",
+    "8": "2rem",
+    "10": "2.5rem",
+    "12": "3rem",
+    "16": "4rem",
+    "20": "5rem",
+    "24": "6rem",
+    "32": "8rem",
+    "40": "10rem",
+    "48": "12rem",
+    "56": "14rem",
+    "64": "16rem"
+  },
+  "borderRadius": {
+    "none": "0",
+    "sm": "0.375rem",
+    "base": "0.5rem",
+    "md": "0.75rem",
+    "lg": "1rem",
+    "xl": "1.5rem",
+    "2xl": "2rem",
+    "3xl": "3rem",
+    "full": "9999px"
+  },
+  "shadows": {
+    "xs": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+    "sm": "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
+    "base": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+    "md": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+    "lg": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+    "xl": "0 25px 50px -12px rgb(0 0 0 / 0.25)",
+    "2xl": "0 50px 100px -20px rgb(0 0 0 / 0.3)",
+    "inner": "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)",
+    "glow": {
+      "primary": "0 0 20px rgb(99 102 241 / 0.5), 0 0 40px rgb(99 102 241 / 0.3)",
+      "accent": "0 0 20px rgb(244 63 94 / 0.5), 0 0 40px rgb(244 63 94 / 0.3)",
+      "success": "0 0 20px rgb(34 197 94 / 0.5), 0 0 40px rgb(34 197 94 / 0.3)"
+    }
+  },
+  "motion": {
+    "easing": {
+      "standard": "cubic-bezier(0.4, 0.0, 0.2, 1)",
+      "decelerate": "cubic-bezier(0.0, 0.0, 0.2, 1)",
+      "accelerate": "cubic-bezier(0.4, 0.0, 1, 1)",
+      "sharp": "cubic-bezier(0.4, 0.0, 0.6, 1)",
+      "spring": "cubic-bezier(0.34, 1.56, 0.64, 1)"
+    },
+    "duration": {
+      "instant": "50ms",
+      "fast": "140ms",
+      "base": "180ms",
+      "slow": "220ms",
+      "slower": "300ms",
+      "hero": "600ms",
+      "epic": "1000ms"
+    }
+  },
+  "breakpoints": {
+    "sm": "640px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px",
+    "2xl": "1536px"
+  },
+  "zIndex": {
+    "base": "0",
+    "dropdown": "1000",
+    "sticky": "1100",
+    "fixed": "1200",
+    "modal": "1300",
+    "popover": "1400",
+    "tooltip": "1500",
+    "toast": "1600"
+  }
+}

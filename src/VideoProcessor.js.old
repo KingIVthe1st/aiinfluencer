@@ -1,0 +1,143 @@
+// Durable Object for processing long-running video generation tasks
+// No CPU time limit - can run as long as needed for Sora API
+
+import { generateSora } from '../functions/api/generate-sora.js';
+import { generateVeo } from '../functions/api/generate-veo.js';
+
+export class VideoProcessor {
+  constructor(state, env) {
+    this.state = state;
+    this.env = env;
+  }
+
+  async fetch(request) {
+    const url = new URL(request.url);
+
+    if (url.pathname === '/process') {
+      return this.processVideo(request);
+    }
+
+    if (url.pathname === '/status') {
+      return this.getStatus();
+    }
+
+    return new Response('Not found', { status: 404 });
+  }
+
+  async processVideo(request) {
+    try {
+      const jobData = await request.json();
+
+      // Store job data in Durable Object storage
+      await this.state.storage.put('jobData', jobData);
+      await this.state.storage.put('status', 'processing');
+      await this.state.storage.put('startedAt', Date.now());
+
+      console.log(`Processing job ${jobData.jobId} with Durable Object`);
+
+      // Create a context object with env for the generator functions
+      const context = {
+        env: this.env,
+        waitUntil: () => {}, // Durable Objects don't need waitUntil
+      };
+
+      // Generate video based on model
+      let response;
+      if (jobData.model === 'sora-2-pro') {
+        response = await generateSora(
+          context,
+          jobData.prompt,
+          jobData.aspectRatio,
+          jobData.duration
+        );
+      } else if (jobData.model.startsWith('veo-')) {
+        response = await generateVeo(
+          context,
+          jobData.prompt,
+          jobData.aspectRatio,
+          jobData.resolution || '1080p'
+        );
+      } else {
+        throw new Error('Invalid model specified');
+      }
+
+      const result = await response.json();
+
+      if (result.success) {
+        // Store completed video data
+        await this.state.storage.put('status', 'completed');
+        await this.state.storage.put('video', result.video);
+        await this.state.storage.put('completedAt', Date.now());
+
+        // Also store in KV for history
+        await this.env.VIDEO_HISTORY.put(
+          jobData.jobId,
+          JSON.stringify(result.video),
+          { metadata: { timestamp: Date.now(), service: jobData.model } }
+        );
+
+        // Clean up job metadata from KV
+        await this.env.VIDEO_HISTORY.delete(`job-${jobData.jobId}`);
+
+        console.log(`✅ Job ${jobData.jobId} completed successfully`);
+
+        return new Response(JSON.stringify({
+          success: true,
+          message: 'Video generated successfully',
+          video: result.video
+        }), {
+          headers: { 'Content-Type': 'application/json' }
+        });
+      } else {
+        throw new Error(result.error || 'Video generation failed');
+      }
+
+    } catch (error) {
+      console.error('Video processing error:', error);
+
+      // Store error state
+      await this.state.storage.put('status', 'failed');
+      await this.state.storage.put('error', error.message);
+      await this.state.storage.put('failedAt', Date.now());
+
+      // Update KV with error
+      const jobData = await this.state.storage.get('jobData');
+      if (jobData) {
+        await this.env.VIDEO_HISTORY.put(`job-${jobData.jobId}`, JSON.stringify({
+          ...jobData,
+          status: 'failed',
+          error: error.message
+        }), { expirationTtl: 86400 });
+      }
+
+      return new Response(JSON.stringify({
+        success: false,
+        error: error.message
+      }), {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+  }
+
+  async getStatus() {
+    const status = await this.state.storage.get('status');
+    const jobData = await this.state.storage.get('jobData');
+    const video = await this.state.storage.get('video');
+    const error = await this.state.storage.get('error');
+    const startedAt = await this.state.storage.get('startedAt');
+    const completedAt = await this.state.storage.get('completedAt');
+
+    return new Response(JSON.stringify({
+      status: status || 'unknown',
+      jobData,
+      video,
+      error,
+      startedAt,
+      completedAt,
+      duration: completedAt && startedAt ? completedAt - startedAt : null
+    }), {
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+}

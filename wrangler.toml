@@ -1,13 +1,5 @@
 # AI Influencer - Wrangler Configuration
-# NOTE: This is a NEW project, completely separate from ai-singer-studio
-# You must create NEW Cloudflare resources before deploying:
-# - D1 Database: wrangler d1 create ai-influencer-db
-# - R2 Buckets: wrangler r2 bucket create ai-influencer-assets
-#               wrangler r2 bucket create ai-influencer-video-assets
-# - KV Namespaces: wrangler kv:namespace create VIDEO_HISTORY
-#                  wrangler kv:namespace create SESSIONS
-#                  wrangler kv:namespace create CACHE
-# - Queue: wrangler queues create ai-influencer-jobs
+# This is a NEW project, completely separate from ai-singer-studio
 
 name = "ai-influencer"
 main = "src/index.ts"
@@ -17,40 +9,33 @@ compatibility_flags = ["nodejs_compat"]
 # Worker configuration
 workers_dev = true
 
-# D1 Database - CREATE NEW: wrangler d1 create ai-influencer-db
-# Then update the database_id below with the new ID
+# D1 Database
 [[d1_databases]]
 binding = "DB"
 database_name = "ai-influencer-db"
-database_id = "REPLACE_WITH_NEW_DATABASE_ID"
+database_id = "3ff456d9-e180-476b-8a4b-b93a09d1a24f"
 
 # R2 Buckets for storing generated assets
-# CREATE NEW: wrangler r2 bucket create ai-influencer-assets
 [[r2_buckets]]
 binding = "ASSETS_BUCKET"
 bucket_name = "ai-influencer-assets"
 
-# CREATE NEW: wrangler r2 bucket create ai-influencer-video-assets
 [[r2_buckets]]
 binding = "VIDEO_ASSETS"
 bucket_name = "ai-influencer-video-assets"
 
-# KV Namespaces - CREATE NEW for each:
-# wrangler kv:namespace create VIDEO_HISTORY
-# wrangler kv:namespace create SESSIONS
-# wrangler kv:namespace create CACHE
-# Then update the IDs below
+# KV Namespaces
 [[kv_namespaces]]
 binding = "VIDEO_HISTORY"
-id = "REPLACE_WITH_NEW_KV_ID_VIDEO_HISTORY"
+id = "f884e80d59664e80b18a0aedb4a8bf7f"
 
 [[kv_namespaces]]
 binding = "SESSIONS"
-id = "REPLACE_WITH_NEW_KV_ID_SESSIONS"
+id = "a25a8d67080a4c738a6126f17b58bcf5"
 
 [[kv_namespaces]]
 binding = "CACHE"
-id = "REPLACE_WITH_NEW_KV_ID_CACHE"
+id = "05ab6102066f41dbbe5329b0d1d70ec0"
 
 # Durable Objects
 [[durable_objects.bindings]]
@@ -62,7 +47,7 @@ script_name = "ai-influencer"
 tag = "v1"
 new_classes = ["QuotaManager"]
 
-# Queues - CREATE NEW: wrangler queues create ai-influencer-jobs
+# Queues
 [[queues.producers]]
 binding = "JOB_QUEUE"
 queue = "ai-influencer-jobs"
@@ -78,8 +63,6 @@ retry_delay = 5
 [vars]
 ENVIRONMENT = "development"
 CLERK_PUBLISHABLE_KEY = ""
-CLOUDFLARE_ACCOUNT_ID = "REPLACE_WITH_YOUR_ACCOUNT_ID"
-R2_ACCOUNT_ID = "REPLACE_WITH_YOUR_ACCOUNT_ID"
 
 # Secrets to set via CLI:
 # wrangler secret put GEMINI_API_KEY
@@ -90,9 +73,6 @@ R2_ACCOUNT_ID = "REPLACE_WITH_YOUR_ACCOUNT_ID"
 # wrangler secret put STRIPE_SECRET_KEY
 # wrangler secret put STRIPE_WEBHOOK_SECRET
 # wrangler secret put CLERK_SECRET_KEY
-# wrangler secret put ASSETS_PUBLIC_URL
-# wrangler secret put R2_ACCESS_KEY_ID
-# wrangler secret put R2_SECRET_ACCESS_KEY
 
 # Stream API
 [ai]
@@ -109,20 +89,18 @@ vars = { ENVIRONMENT = "development" }
 # Staging environment
 [env.staging]
 vars = { ENVIRONMENT = "staging" }
-# route = "staging.aiinfluencer.studio/*"
 
 # Production environment
 [env.production]
 compatibility_flags = ["nodejs_compat"]
-vars = { ENVIRONMENT = "production", CLOUDFLARE_ACCOUNT_ID = "REPLACE_WITH_YOUR_ACCOUNT_ID", R2_ACCOUNT_ID = "REPLACE_WITH_YOUR_ACCOUNT_ID", CLERK_PUBLISHABLE_KEY = "" }
-# route = "aiinfluencer.studio/*" # Uncomment when domain is configured
+vars = { ENVIRONMENT = "production", CLERK_PUBLISHABLE_KEY = "" }
 workers_dev = true
 
 # Production inherits all bindings from root config
 [[env.production.d1_databases]]
 binding = "DB"
 database_name = "ai-influencer-db"
-database_id = "REPLACE_WITH_NEW_DATABASE_ID"
+database_id = "3ff456d9-e180-476b-8a4b-b93a09d1a24f"
 
 [[env.production.r2_buckets]]
 binding = "ASSETS_BUCKET"
@@ -134,15 +112,15 @@ bucket_name = "ai-influencer-video-assets"
 
 [[env.production.kv_namespaces]]
 binding = "VIDEO_HISTORY"
-id = "REPLACE_WITH_NEW_KV_ID_VIDEO_HISTORY"
+id = "f884e80d59664e80b18a0aedb4a8bf7f"
 
 [[env.production.kv_namespaces]]
 binding = "SESSIONS"
-id = "REPLACE_WITH_NEW_KV_ID_SESSIONS"
+id = "a25a8d67080a4c738a6126f17b58bcf5"
 
 [[env.production.kv_namespaces]]
 binding = "CACHE"
-id = "REPLACE_WITH_NEW_KV_ID_CACHE"
+id = "05ab6102066f41dbbe5329b0d1d70ec0"
 
 [[env.production.durable_objects.bindings]]
 name = "QUOTA_MANAGER"
